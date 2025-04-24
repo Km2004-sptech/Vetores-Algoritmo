@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem</title>
+</head>
+
+<body>
+
+    <label>Destino de viagem: </label>
+    <input type="text" id="destino_viagem">
+    <button onclick="adicionar()">Adicionar</button>
+    <br>
+    <button onclick="primeiraViagem()">Primeira viagem</button>
+    <button onclick="terceiraViagem()">Terceira viagem</button>
+    <button onclick="ultimaViagem()">Última viagem</button>
+    <div id="frase"></div>
+
+</body>
+
+<script>
+
+    var viagens = [];
+    var fraseFinal = '';
+
+    function adicionar() {
+        var viagemNova = destino_viagem.value;
+        viagens.push(viagemNova);
+    }
+
+    function primeiraViagem() {
+
+        for(var i = 0; i < viagens.length; i ++){
+        var primeiraViagem = viagens[0]
+        fraseFinal += `${primeiraViagem} <br>`
+
+        var últimaFruta = frutas[quantidadeFrutas - 1]
+        fraseFinal += `Última fruta: ${últimaFruta} <br>`
+
+
+        frase.innerHTML = fraseFinal;
+        }
+    }
+
+    function ultimaViagem() {
+
+        fraseFinal = '';
+        for (var i = 0; i < frutas.length; i++) {
+            fraseFinal += `Fruta ${i}: ${frutas[i]} <br>`
+        }
+
+        frase.innerHTML = fraseFinal;
+    }
+
+
+</script>
+
+</html>

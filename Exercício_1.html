@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira</title>
+</head>
+
+<body>
+
+    <input type="text" id="fruta_digitada">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="frase"></div>
+
+</body>
+
+<script>
+
+    var frutas = ['Maçã', 'Uva', 'Melão', 'Melancia', 'Morango'];
+
+    function pesquisar() {
+        var frutaDigitada = fruta_digitada.value;
+        fraseFinal = '';
+
+        for(var i = 0; i < frutas.length; i ++){
+      if(frutas[i] === frutaDigitada){
+       fraseFinal = `A fruta ${frutaDigitada} existe na lista.`
+      }else{
+        fraseFinal = `Não existe a fruta ${frutaDigitada} na lista.`
+      }
+      frase.innerHTML = fraseFinal;
+    
+    }
+    }
+
+
+</script>
+
+</html>

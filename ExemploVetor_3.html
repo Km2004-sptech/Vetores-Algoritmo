@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="fruta_digitada">
+    <button onclick="adicionar()">Adicionar Fruta</button>
+    <br>
+    <button onclick="verResumoFrutas()">Ver Frutas</button>
+    <button onclick="verListaFrutas()">Ver Lista de Frutas</button>
+    <div id="frase"></div>
+
+</body>
+
+<script>
+    //Total é diferente de índice, total: 5
+    //Index: até o 4
+    var frutas = ['Maçã', 'Uva', 'Melão', 'Abacate', 'Morango'];
+
+    function adicionar() {
+        var frutaNova = fruta_digitada.value;
+        frutas.push(frutaNova);
+        alert('Fruta adicionada')
+    }
+
+    function verResumoFrutas() {
+        //Informações das frutas:
+
+        var fraseFinal = '';
+
+        var quantidadeFrutas = frutas.length;
+        fraseFinal += `Quantidade de frutas ${quantidadeFrutas} <br>`
+
+        var primeiraFruta = frutas[0]
+        fraseFinal += `1ª fruta: ${primeiraFruta} <br>`
+
+        var últimaFruta = frutas[quantidadeFrutas - 1]
+        fraseFinal += `Última fruta: ${últimaFruta} <br>`
+
+
+        frase.innerHTML = fraseFinal;
+    }
+
+    function verListaFrutas() {
+        //Exibir nesse formato: "Fruta X: NomeFruta"
+
+        fraseFinal = '';
+        for (var i = 0; i < frutas.length; i++) {
+            fraseFinal += `Fruta ${i}: ${frutas[i]} <br>`
+        }
+
+        frase.innerHTML = fraseFinal;
+    }
+
+
+</script>
+
+</html>

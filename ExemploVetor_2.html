@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="fruta_digitada">
+    <button onclick="adicionar()">Adicionar Fruta</button>
+    <button onclick="verFrutas()">Ver Frutas</button>
+    <div id="frase"></div>
+
+</body>
+
+<script>
+    //Agora vamos melhorar o "VerFrutas":
+    var frutas = ['Maçã', 'Uva', 'Melão', 'Abacate', 'Morango'];
+
+    function adicionar() {
+        var frutaNova = fruta_digitada.value;
+        frutas.push(frutaNova);
+        alert('Fruta adicionada')
+    }
+
+    function verFrutas() {
+    //Informações das frutas:
+
+var fraseFinal = '';
+
+    var quantidadeFrutas = frutas.length;
+    fraseFinal += `Quantidade de frutas ${quantidadeFrutas} <br>`
+
+    var primeiraFruta = frutas[0]
+    fraseFinal += `1ª fruta: ${primeiraFruta} <br>`
+
+    var últimaFruta = frutas[quantidadeFrutas - 1]
+     fraseFinal += `Última fruta: ${últimaFruta} <br>`
+
+    frase.innerHTML = fraseFinal;
+    }
+
+</script>
+
+</html>
