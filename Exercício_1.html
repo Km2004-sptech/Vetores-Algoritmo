@@ -22,17 +22,23 @@
     function pesquisar() {
         var frutaDigitada = fruta_digitada.value;
         fraseFinal = '';
+        var achei = false;
 
         for(var i = 0; i < frutas.length; i ++){
-      if(frutas[i] === frutaDigitada){
+      if(frutas[i] == frutaDigitada){
+        achei = true;
+      }
+    }
+        if(achei){
        fraseFinal = `A fruta ${frutaDigitada} existe na lista.`
       }else{
         fraseFinal = `Não existe a fruta ${frutaDigitada} na lista.`
       }
       frase.innerHTML = fraseFinal;
     
-    }
-    }
+      }
+    
+    
 
 
 </script>
