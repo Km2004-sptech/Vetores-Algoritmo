@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09</title>
+</head>
+
+<body>
+    <input type="text" id="ipt_projeto">
+    <button onclick="registrar()">Registrar Projeto</button>
+    <br>
+    <button onclick="mostrar()">Mostrar Projetos</button>
+    <div id="div_resultado"></div>
+</body>
+<script>
+  
+  var projetos = [];
+  function registrar(){
+    var projetoRegistrado = ipt_projeto.value;
+    projetos.push(projetoRegistrado);
+    var totalProjetos = projetos.length
+
+    var fraseFinal = '';
+    for(var i = 1; i < totalProjetos; i ++){
+
+        if(totalProjetos <= 0){
+        fraseFinal = `Ainda não há projetos registrados <br>`
+    } else if(totalProjetos > 0 && totalProjetos <= 5){
+        fraseFinal = `Você já fez ${i} projetos. Por isso você é um profissional Júnior <br> <br>`  
+    }else if(totalProjetos > 4 && totalProjetos < 14 ){
+        fraseFinal = `Você já fez ${i} projetos. Por isso você é um profissional Pleno <br> <br>`  
+    }else{
+        fraseFinal = `Você já fez ${i} projetos. Por isso você é um profissional Sênior <br> <br>`  
+    }
+
+    }
+    div_resultado.innerHTML = fraseFinal;
+}
+  
+function mostrar(){
+    var projetoRegistrado = ipt_projeto.value;
+    projetos.push(projetoRegistrado);
+    var totalProjetos = projetos.length
+
+    var fraseFinal = '';
+    div_resultado.innerHTML += 'Meus Projetos: <br> <br>'
+    for(var i = totalProjetos -1; i >= 0 ; i --){
+
+        fraseFinal += `- ${projetos[i]}<br>`
+    }
+    div_resultado.innerHTML += fraseFinal;
+
+}
+  
+
+</script>
+
+</html>
